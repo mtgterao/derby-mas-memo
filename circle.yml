@@ -1,0 +1,19 @@
+dependencies:
+    override:
+        - go get github.com/astaxie/beego
+        - go get github.com/astaxie/beego/cache
+        - go get github.com/astaxie/beego/cache/redis
+        - go get github.com/beego/bee
+        - go get github.com/astaxie/beego/orm
+        - go get github.com/lib/pq
+        - go get github.com/go-sql-driver/mysql
+        - go get github.com/smartystreets/goconvey/convey
+        - go build -v
+test:
+    override:
+        - go test -v -race ./tests/...
+machine:
+    environment:
+        GOROOT: ""
+        PATH: "/usr/local/go/bin:/usr/local/go_workspace/bin:~/.go_workspace/bin:${PATH}"
+        GOPATH: "${HOME}/.go_workspace:/usr/local/go_workspace:${HOME}/.go_project"
