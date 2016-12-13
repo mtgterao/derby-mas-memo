@@ -20,9 +20,12 @@ func main() {
 func initDatabase() {
     driver := beego.AppConfig.String("db_driver")
     dbLink := fmt.Sprintf(
-        "user=%s dbname=%s sslmode=disable",
+        "user=%s password=%s dbname=%s host=%s port=%s sslmode=disable",
         beego.AppConfig.String("db_user"),
+        beego.AppConfig.String("db_password"),
         beego.AppConfig.String("db_name"),
+        beego.AppConfig.String("db_host"),
+        beego.AppConfig.String("db_port"),
     )
 
     orm.RegisterDriver(driver, orm.DRPostgres)
