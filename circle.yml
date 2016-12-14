@@ -17,4 +17,4 @@ test:
     override:
         - pwd
         - ls -ltr
-        - go test -v -race ${HOME}/${CIRCLE_PROJECT_REPONAME}/github.com/mtgterao/derby-mas-memo/tests/...
+        - go test -v -race ${HOME}/${CIRCLE_PROJECT_REPONAME}/github.com/mtgterao/derby-mas-memo/tests/*
