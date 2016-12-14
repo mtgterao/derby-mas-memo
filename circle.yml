@@ -1,0 +1,18 @@
+machine:
+    timezone:
+        Asia/Tokyo
+
+dependencies:
+    post:
+        - go get github.com/astaxie/beego
+        - go get github.com/astaxie/beego/cache
+        - go get github.com/astaxie/beego/cache/redis
+        - go get github.com/beego/bee
+        - go get github.com/astaxie/beego/orm
+        - go get github.com/lib/pq
+        - go get github.com/go-sql-driver/mysql
+        - go get github.com/smartystreets/goconvey/convey
+
+test:
+    override:
+        - go test -v -race ./tests/...

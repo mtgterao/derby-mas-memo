@@ -11,13 +11,20 @@ module.exports = {
         loaders: [{
             test: /\.css$/, loader: 'style-loader!css-loader'
         }, {
-            test: /\/js[x]?$/,
+            test: /\.js[x]?$/,
             exclude: /node_modules/,
             loader: 'babel',
             query: {
                 presets: ['react', 'es2015']
             }
+        }, {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'eslint-loader'
         }]
+    },
+    eslint: {
+        configFile: "./.eslintrc"
     },
     resolve: {
         extensions: ['', '.js', '.jsx']

@@ -6,6 +6,7 @@ import (
     "github.com/astaxie/beego"
     "github.com/astaxie/beego/orm"
     _ "github.com/lib/pq"
+    "derby-mas-memo/helpers"
 )
 
 func init() {
