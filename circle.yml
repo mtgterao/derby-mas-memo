@@ -14,6 +14,7 @@ dependencies:
 
 test:
     pre:
+        - export GOPATH=${HOME}
         - echo $GOPATH
         - cd ${GOPATH}/src/${IMPORT_PATH} && pwd && godep restore
     override:
