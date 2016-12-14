@@ -16,4 +16,5 @@ dependencies:
 test:
     override:
         - pwd
+        - ls -ltr
         - go test -v -race ${HOME}/github.com/mtgterao/derby-mas-memo/tests/...
