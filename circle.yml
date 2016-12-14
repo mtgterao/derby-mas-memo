@@ -1,9 +1,11 @@
 machine:
     timezone:
         Asia/Tokyo
+    environment:
+        IMPORT_PATH: "github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
 
 dependencies:
-    post:
+    pre:
         - go get github.com/astaxie/beego
         - go get github.com/astaxie/beego/cache
         - go get github.com/astaxie/beego/cache/redis
@@ -12,9 +14,10 @@ dependencies:
         - go get github.com/lib/pq
         - go get github.com/go-sql-driver/mysql
         - go get github.com/smartystreets/goconvey/convey
+    override:
+        - mkdir -p "${GOPATH}/src/${IMPORT_PATH}"
+        - rsync -azC --delete ./ "${GOPATH}/src/${IMPORT_PATH}"
 
 test:
     override:
-        - pwd
-        - ls -ltr
-        - go test -v -race ${HOME}/${CIRCLE_PROJECT_REPONAME}/github.com/mtgterao/derby-mas-memo/tests/*
+        - go test -v -race ${GOPATH}/src/${IMPORT_PATH}/tests/*
