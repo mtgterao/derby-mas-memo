@@ -2,11 +2,11 @@ package main
 
 import (
     "fmt"
-    _ "derby-mas-memo/routers"
+    _ "github.com/mtgterao/derby-mas-memo/routers"
     "github.com/astaxie/beego"
     "github.com/astaxie/beego/orm"
     _ "github.com/lib/pq"
-    "derby-mas-memo/helpers"
+    "github.com/mtgterao/derby-mas-memo/helpers"
 )
 
 func init() {

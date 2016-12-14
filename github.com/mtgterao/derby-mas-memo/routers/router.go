@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"derby-mas-memo/controllers"
+	"github.com/mtgterao/derby-mas-memo/controllers"
 	"github.com/astaxie/beego"
 )
 

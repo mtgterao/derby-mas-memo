@@ -2,19 +2,18 @@
 
 ## はじめに
 
-beego使っているので、はじめに以下のとおりgo getしてください
+godepを使ってパッケージ管理をしているので、godepをインストールしてください。
 
 ```
-$ go get github.com/astaxie/beego
-$ go get github.com/beego/bee
-$ go get github.com/astaxie/beego/cache
-$ go get github.com/astaxie/beego/cache/redis
-$ go get github.com/astaxie/beego/orm
-$ go get github.com/lib/pq
-$ go get github.com/go-sql-driver/mysql
+$ go get github.com/tools/godep
+
+$ cd github.com/mtgterao/derby-mas-memo/
+
+$ godep restore
 ```
 
-上記の通り、cacheとしてredisを使う想定です。
+
+cacheとしてredisを使う想定です。
 
 libraries/cache.goにキャッシュ接続部分は実装してあります。
 
