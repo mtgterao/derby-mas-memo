@@ -6,18 +6,13 @@ machine:
 
 dependencies:
     pre:
-        - go get github.com/astaxie/beego
-        - go get github.com/astaxie/beego/cache
-        - go get github.com/astaxie/beego/cache/redis
-        - go get github.com/beego/bee
-        - go get github.com/astaxie/beego/orm
-        - go get github.com/lib/pq
-        - go get github.com/go-sql-driver/mysql
-        - go get github.com/smartystreets/goconvey/convey
+        - go get github.com/tools/godep
     override:
         - mkdir -p "${GOPATH}/src/${IMPORT_PATH}"
         - rsync -azC --delete ./ "${GOPATH}/src/${IMPORT_PATH}"
 
 test:
+    pre:
+        - cd ${GOPATH}/src/${IMPORT_PATH} && godep restore
     override:
-        - go test -v -race ${GOPATH}/src/${IMPORT_PATH}/tests/*
+        - cd ${GOPATH}/src/${IMPORT_PATH} && go test -v -race ./tests/*
