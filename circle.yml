@@ -13,6 +13,7 @@ dependencies:
 
 test:
     pre:
+        - echo $GOPATH
         - cd ${GOPATH}/src/${IMPORT_PATH} && pwd && godep restore
     override:
         - cd ${GOPATH}/src/${IMPORT_PATH} && go test -v -race ./tests/*
