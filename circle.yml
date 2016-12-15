@@ -2,22 +2,17 @@ machine:
     timezone:
         Asia/Tokyo
     environment:
-        IMPORT_PATH: "github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
+        GOPATH: ${HOME}/.go_workspace
+        SOURCE_PATH: ${HOME}/derby-mas-memo
+        DIST_PATH: ${GOPATH}/src/github.com/mtgterao
 
 dependencies:
-    pre:
-        - go get github.com/astaxie/beego
-        - go get github.com/astaxie/beego/cache
-        - go get github.com/astaxie/beego/cache/redis
-        - go get github.com/beego/bee
-        - go get github.com/astaxie/beego/orm
-        - go get github.com/lib/pq
-        - go get github.com/go-sql-driver/mysql
-        - go get github.com/smartystreets/goconvey/convey
     override:
-        - mkdir -p "${GOPATH}/src/${IMPORT_PATH}"
-        - rsync -azC --delete ./ "${GOPATH}/src/${IMPORT_PATH}"
+        - go get github.com/tools/godep
 
 test:
+    pre:
+        - mkdir -p ${DIST_PATH}
+        - cp -rf ${SOURCE_PATH} ${DIST_PATH}
     override:
-        - go test -v -race ${GOPATH}/src/${IMPORT_PATH}/tests/*
+        - cd ${DIST_PATH} && go test -v -race ./tests/*

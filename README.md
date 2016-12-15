@@ -2,6 +2,22 @@
 
 ## はじめに
 
+Goのパスルールにより、git cloneする場合は以下のようにする必要があります
+
+```
+$ git clone https://github.com/<user>/derby-mas-memo.git ${GOPATH}/src/github.com/mtgterao/derby-mas-memo
+```
+
+もしくは、
+
+```
+$ go get github.com/mtgterao/derby-mas-memo
+
+$ git remote add <alias> https://github.com/<user>/derby-mas-memo.git
+```
+
+---
+
 godepを使ってパッケージ管理をしているので、godepをインストールしてください。
 
 ```

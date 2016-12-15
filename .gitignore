@@ -1,7 +1,4 @@
-github.com/*
-!github.com/mtgterao
-
-github.com/mtgterao/derby-mas-memo/node_modules/*
-github.com/mtgterao/derby-mas-memo/static/dist/*
-github.com/mtgterao/derby-mas-memo/derby-mas-memo
-github.com/mtgterao/derby-mas-memo/vendor/*
+node_modules/*
+static/dist/*
+derby-mas-memo
+vendor/*
