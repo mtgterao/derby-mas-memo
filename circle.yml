@@ -3,7 +3,7 @@ machine:
         Asia/Tokyo
 
 dependencies:
-    pre:
+    override:
         - go get github.com/tools/godep
 
 test:
