@@ -3,7 +3,7 @@ machine:
         Asia/Tokyo
     environment:
         GOPATH: ${HOME}/.go_workspace
-        SOURCE_PATH: ${HOME}/derby-mas-memo
+        SOURCE_PATH: ${HOME}/${CIRCLE_PROJECT_REPONAME}
         DIST_PATH: ${GOPATH}/src/github.com/mtgterao
 
 dependencies:
@@ -15,4 +15,5 @@ test:
         - mkdir -p ${DIST_PATH}
         - cp -rf ${SOURCE_PATH} ${DIST_PATH}
     override:
-        - cd ${DIST_PATH} && go test -v -race ./tests/*
+        - cd ${DIST_PATH}/${CIRCLE_PROJECT_REPONAME} && godep restore
+        - cd ${DIST_PATH}/${CIRCLE_PROJECT_REPONAME} && go test -v -race ./tests/*
