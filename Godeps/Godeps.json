@@ -64,9 +64,19 @@
             "Rev": "d4c757aa9afd1e2fc1832aaab209b5794eb336e1"
         },
         {
+            "ImportPath": "github.com/smartystreets/assertions",
+            "Comment": "go1.0-cutoff-128-g4a82388",
+            "Rev": "26acb9229f421449ac63d014995b282d59261a8b"
+        },
+        {
             "ImportPath": "github.com/gopherjs/gopherjs/js",
             "Comment": "go1.0-cutoff-128-g4a82388",
             "Rev": "e34a5cd6a1bc7c4fde759f2d3039852fc68b5fcc"
+        },
+        {
+            "ImportPath": "github.com/jtolds/gls",
+            "Comment": "go1.0-cutoff-128-g4a82388",
+            "Rev": "8ddce2a84170772b95dd5d576c48d517b22cac63"
         }
     ]
 }
