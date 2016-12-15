@@ -62,6 +62,11 @@
             "ImportPath": "github.com/smartystreets/goconvey/convey",
             "Comment": "go1.0-cutoff-128-g4a82388",
             "Rev": "d4c757aa9afd1e2fc1832aaab209b5794eb336e1"
+        },
+        {
+            "ImportPath": "github.com/gopherjs/gopherjs/js",
+            "Comment": "go1.0-cutoff-128-g4a82388",
+            "Rev": "e34a5cd6a1bc7c4fde759f2d3039852fc68b5fcc"
         }
     ]
 }
