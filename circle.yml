@@ -1,6 +1,10 @@
 machine:
     timezone:
         Asia/Tokyo
+    environment:
+        GOPATH: ${HOME}/.go_workspace
+        SOURCE_PATH: ${HOME}/derby-mas-memo
+        DIST_PATH: ${GOPATH}/src/github.com/mtgterao
 
 dependencies:
     override:
@@ -8,9 +12,7 @@ dependencies:
 
 test:
     pre:
-        - echo ${GOPATH}
-        - pwd
-        - ls -ltr
-          #        - cd ${GOPATH}/src/${IMPORT_PATH} && pwd && godep restore
+        - mkdir -p ${DIST_PATH}
+        - cp -rf ${SOURCE_PATH} ${DIST_PATH}
     override:
-        #        - cd ${GOPATH}/src/${IMPORT_PATH} && go test -v -race ./tests/*
+        - cd ${DIST_PATH} && go test -v -race ./tests/*
