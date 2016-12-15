@@ -1,21 +1,16 @@
 machine:
     timezone:
         Asia/Tokyo
-    environment:
-        IMPORT_PATH: "github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
 
 dependencies:
     pre:
         - go get github.com/tools/godep
-    override:
-        - export GOPATH=${HOME}
-        - mkdir -p "${GOPATH}/src/${IMPORT_PATH}"
-        - rsync -azC --delete ./ "${GOPATH}/src/${IMPORT_PATH}"
 
 test:
     pre:
-        - export GOPATH=${HOME}
-        - echo $GOPATH
-        - cd ${GOPATH}/src/${IMPORT_PATH} && pwd && godep restore
+        - echo ${GOPATH}
+        - pwd
+        - ls -ltr
+          #        - cd ${GOPATH}/src/${IMPORT_PATH} && pwd && godep restore
     override:
-        - cd ${GOPATH}/src/${IMPORT_PATH} && go test -v -race ./tests/*
+        #        - cd ${GOPATH}/src/${IMPORT_PATH} && go test -v -race ./tests/*
