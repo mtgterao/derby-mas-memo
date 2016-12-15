@@ -29,5 +29,12 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    devServer: {
+        cache: false,
+        contentBase: './static',
+        inline: true,
+        colors: true,
+        port: 8000,
+    }
 }
