@@ -77,6 +77,11 @@
             "ImportPath": "github.com/jtolds/gls",
             "Comment": "go1.0-cutoff-128-g4a82388",
             "Rev": "8ddce2a84170772b95dd5d576c48d517b22cac63"
+        },
+        {
+            "ImportPath": "github.com/garyburd/redigo/redis",
+            "Comment": "go1.0-cutoff-128-g4a82388",
+            "Rev": "8873b2f1995f59d4bcdd2b0dc9858e2cb9bf0c13"
         }
     ]
 }

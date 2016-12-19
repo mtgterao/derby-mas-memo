@@ -5,12 +5,20 @@ import {Layout, Content, Drawer, Header, HeaderRow, HeaderTabs, Tab} from 'react
 import Login from './login.jsx';
 
 export default class AppLayout extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            title: window.data.title
+        };
+    }
+
     render() {
         return (
             <div style={{height: '300px', position: 'relative'}}>
                 <Layout fixedHeader fixedTabs>
                     <Header>
-                        <HeaderRow title="Title">
+                        <HeaderRow title={this.state.title}>
                             <Login />
                         </HeaderRow>
                         <HeaderTabs ripple activeTab={1} onChange={(tabId) => {}}>
@@ -19,7 +27,7 @@ export default class AppLayout extends React.Component {
                             <Tab>Tab3</Tab>
                         </HeaderTabs>
                     </Header>
-                    <Drawer title="Title" />
+                    <Drawer title={this.state.title} />
                     <Content>
                         <div className="page-content">
                         </div>
