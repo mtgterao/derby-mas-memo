@@ -7,7 +7,6 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "nohup webpack-dev-server > /dev/null 2>&1 &",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -27,8 +26,7 @@
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^1.14.0"
   },
   "dependencies": {
     "material-design-lite": "^1.2.1",
