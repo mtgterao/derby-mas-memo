@@ -1,15 +1,18 @@
 package controllers
 
-import (
-	"github.com/astaxie/beego"
-)
-
 type MainController struct {
-	beego.Controller
+    BaseController
+}
+
+type response struct {
+    BaseResponse
+    Title string `json:"title"`
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "index.tpl"
+    res := response{Title: "dery-mas-memo"}
+
+    c.SetResponse(res)
+
+    c.TplName = "index.tpl"
 }

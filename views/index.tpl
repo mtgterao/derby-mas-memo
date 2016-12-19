@@ -8,5 +8,8 @@
         <div id="main"></div>
 
         <script type="text/javascript" src="/static/dist/bundle.js"></script>
+        <script type="text/javascript">
+            window.data = {{.Data}};
+        </script>
     </body>
 </html>
